@@ -7,4 +7,6 @@ Aarhaug (1991): Geoteknikk 1 (in Norwegian)
 
 Aarhaug(1992): Geoteknikk (in Norwegian)
 
+Budhu (2015): Soil Mechanics Fundamentals
+
 Das (2022): Principles of Geotechnical Engineering
