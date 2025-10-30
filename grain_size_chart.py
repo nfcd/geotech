@@ -1,16 +1,29 @@
 import numpy as np
 import matplotlib.patches as patches
 
-def grain_size_chart(fig, ax):
+def grain_size_chart(fig, ax, English=False):
     """
     Draw grain size chart as in Aarhaug (1991), 
     Geoteknikk og fundamenteringslære 1, Fig. 1.5
     INPUT:
         fig : matplotlib figure
         ax  : matplotlib axes
+        English : bool, optional
+            If True, use English labels
+            If False, use Norwegian labels (default)
     OUTPUT:
         None (the function modifies the input axes)
     """
+    # ---------------- LANGUAGE ----------------
+    labels = {1:"Passert i %", 2:"Rest på i %", 3:"U.S. Standard sikt",
+              4:"LEIR", 5:"SILT", 6:"SAND", 7:"GRUS", 8:"STEIN",
+              9:"Fin", 10:"Middels", 11:"Grov"}
+    if English:
+        labels = {1:"% Passing", 2:"% Retained", 3:"U.S. Standard Sieve",
+                  4:"CLAY", 5:"SILT", 6:"SAND", 7:"GRAVEL", 8:"COBBLES",
+                  9:"Fine", 10:"Medium", 11:"Coarse"}
+
+    # ---------------- AXES LIMITS ----------------
     ax.set_xscale("log")
     ax.set_xlim(0.0008, 120)
     ax.set_ylim(0, 100)
@@ -21,14 +34,14 @@ def grain_size_chart(fig, ax):
                 "60", "70", "80", "90", "100"]
 
     # Axis labels
-    ax.set_ylabel("Passert i %", fontsize=11)
+    ax.set_ylabel(labels[1], fontsize=11)
     ax.set_yticks(por_ticks)
     ax.set_yticklabels(por_labels, fontsize=9)
 
     # Right-side axis (Retained %)
     ax2y = ax.twinx()
     ax2y.set_ylim(100, 0)
-    ax2y.set_ylabel("Rest på i %", fontsize=11)
+    ax2y.set_ylabel(labels[2], fontsize=11)
     ax2y.set_yticks(por_ticks)
     ax2y.set_yticklabels(por_labels, fontsize=9)
 
@@ -81,7 +94,7 @@ def grain_size_chart(fig, ax):
     ax2.set_xlim(ax.get_xlim())
     sieve_mm = [0.006, 0.075, 0.15, 0.3, 0.425, 0.6, 1.18, 2.36,
                 4.75, 9.5, 19.0, 37.5, 75.0]
-    sieve_labels = ["U.S. Standard sikt","200", "100", "50", "40", 
+    sieve_labels = [labels[3],"200", "100", "50", "40", 
                     "30", "16", "8", "4", '3/8"', '3/4"', '1.5"', 
                     '3"']
     ax2.set_xticks(sieve_mm)
@@ -99,17 +112,17 @@ def grain_size_chart(fig, ax):
 
     # Main soil classes (LEIR, SILT, SAND, GRUS, STEIN)
     classes = [
-        (0.0008, 0.002, "LEIR"),
-        (0.002, 0.06,  "SILT"),
-        (0.06,  2.0,   "SAND"),
-        (2.0,   60.0,  "GRUS"),
-        (60.0,  120.0, "STEIN"),
+        (0.0008, 0.002, labels[4]),
+        (0.002, 0.06,  labels[5]),
+        (0.06,  2.0,   labels[6]),
+        (2.0,   60.0,  labels[7]),
+        (60.0,  120.0, labels[8]),
     ]
     for x0, x1, label in classes:
         rect = patches.Rectangle((x0, 0.45), x1 - x0, 0.5, linewidth=1.2, 
                                 fill=False, edgecolor="black")
         ax_band.add_patch(rect)
-        if label == "LEIR" or label == "STEIN":
+        if label == labels[4] or label == labels[8]:
             ax_band.text(np.sqrt(x0 * x1), 0.72, label, ha="center",
                     va="center", fontsize=9, fontweight="bold")
         else:
@@ -120,15 +133,15 @@ def grain_size_chart(fig, ax):
 
     # Subdivisions (Fin, Middels, Grov)
     subdivs = [
-        (0.002, 0.006,  "Fin"),
-        (0.006,  0.02,  "Middels"),
-        (0.02,  0.06,  "Grov"),
-        (0.06,  0.2,   "Fin"),
-        (0.2,   0.6,   "Middels"),
-        (0.6,   2.0,   "Grov"),
-        (2.0,   6.0,   "Fin"),
-        (6.0,   20.0,  "Middels"),
-        (20.0,  60.0,  "Grov"),
+        (0.002, 0.006,  labels[9]),
+        (0.006,  0.02,  labels[10]),
+        (0.02,  0.06,  labels[11]),
+        (0.06,  0.2,   labels[9]),
+        (0.2,   0.6,   labels[10]),
+        (0.6,   2.0,   labels[11]),
+        (2.0,   6.0,   labels[9]),
+        (6.0,   20.0,  labels[10]),
+        (20.0,  60.0,  labels[11]),
     ]
 
     # draw rectangles and text from y=0.7 to y=0
