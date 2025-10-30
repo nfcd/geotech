@@ -23,6 +23,6 @@ Das (2022): Principles of Geotechnical Engineering
 7. [Stress at corner of rectangular load](rect_load.ipynb)
 8. [Stress below a strip load](strip_load.ipynb)
 9. [Oedometer test](oedometer_test.ipynb)
-10.[Settlement of shallow foundations](settlements.ipynb)
+10. [Settlement of shallow foundations](settlements.ipynb)
 
 Any questions please contact me at [nestor.cardozo@uis.no](mailto:nestor.cardozo@uis.no)
