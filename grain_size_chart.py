@@ -118,6 +118,7 @@ def grain_size_chart(fig, ax, English=False):
         (2.0,   60.0,  labels[7]),
         (60.0,  120.0, labels[8]),
     ]
+    # draw rectangles and text
     for x0, x1, label in classes:
         rect = patches.Rectangle((x0, 0.45), x1 - x0, 0.5, linewidth=1.2, 
                                 fill=False, edgecolor="black")
@@ -143,8 +144,7 @@ def grain_size_chart(fig, ax, English=False):
         (6.0,   20.0,  labels[10]),
         (20.0,  60.0,  labels[11]),
     ]
-
-    # draw rectangles and text from y=0.7 to y=0
+    # draw rectangles and text 
     for x0, x1, label in subdivs:
         rect = patches.Rectangle((x0, 0.45), x1 - x0, 0.25, linewidth=0.8, 
                                 fill=False, edgecolor="black")
