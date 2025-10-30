@@ -4,7 +4,7 @@ import matplotlib.patches as patches
 def grain_size_chart(fig, ax, English=False):
     """
     Draw grain size chart as in Aarhaug (1991), 
-    Geoteknikk og fundamenteringslære 1, Fig. 1.5
+    Geoteknikk og fundamenteringslære 1
     INPUT:
         fig : matplotlib figure
         ax  : matplotlib axes
