@@ -69,9 +69,9 @@ def grain_size_chart(fig, ax, English=False):
     # ---------------- DASHED VERTICAL LINES AT SIKT VALUES ----------------
     sieve_mm = [0.075, 0.15, 0.3, 0.6, 1.18, 2.36,
                 4.75, 9.5, 19.0, 37.5, 75.0, 120]
-    sieve_labels = ['0.075', '0.15', '0.3', '0.6', '1.18', 
-                    '2.36', '4.75', '9.5', '19.0', '37.5', 
-                    '75.0', 'mm']
+    sieve_labels = ['0.074', '0.149', '0.297', '0.59', '1.19', 
+                    '2.38', '4.76', '9.52', '19.04', '38.1', 
+                    '76.2', 'mm']
     for x in sieve_mm:
         ax.axvline(x, color="black", linestyle="--", linewidth=0.8)
     # add another one for sieve 40 (0.425 mm)
