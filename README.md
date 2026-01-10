@@ -4,9 +4,9 @@ Collection of Python scripts for the course [GEO285: Geotechnical Engineering](h
 
 We use the following books in the course:
 
-Aarhaug (1991): Geoteknikk 1 (in Norwegian)
+Aarhaug (1984): Geoteknikk og fundamenteringslære 1 (in Norwegian)
 
-Aarhaug(1992): Geoteknikk (in Norwegian)
+Aarhaug(1984): Geoteknikk og fundamenteringslære 2 (in Norwegian)
 
 Budhu (2015): Soil Mechanics Fundamentals
 
