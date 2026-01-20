@@ -1,6 +1,6 @@
 # geotech
 
-Collection of Python scripts for the course [GEO285: Geotechnical Engineering](https://www.uis.no/en/course/GEO285_1) at UiS.
+Collection of Python scripts for the course [GEO285: Geotechnical Engineering](https://www.uis.no/en/course/GEO285_1) at UiS. The scripts are organized as Jupyter notebooks in the [notebooks](notebooks/) folder, and supporting functions are in the folder [functions](functions/).
 
 We use the following books in the course:
 
